@@ -18,7 +18,7 @@ public class GestorTareas {
   private By submitButton = By.cssSelector("button[type='submit']");
 
   // button[text()='Completar']
-  private By completeButton = By.xpath("//button[text()='Completar'");
+  private By completeButton = By.xpath("//*[@id=\"root\"]/div/ul/li/div/button[1]");
 
   // construct solo driver y agregar wait explicito
   public GestorTareas(WebDriver driver) {
@@ -26,24 +26,31 @@ public class GestorTareas {
     this.wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // wait explicito
   }
 
-  public By getTitleInput() {
-    return titleInput;
+  public String getTitleInput() {
+    return driver.findElement(titleInput).getAttribute("value");
   }
 
-  public void setTitleInput(By titleInput) {
-    this.titleInput = titleInput;
+  public void setTitleInput(String title) {
+    driver.findElement(titleInput).clear();
+    driver.findElement(titleInput).sendKeys(title);
   }
 
-  public By getDescriptionTextarea() {
-    return descriptionTextarea;
+  public String getDescriptionTextarea() {
+    return driver.findElement(descriptionTextarea).getAttribute("value");
   }
 
-  public void setDescriptionTextarea(By descriptionTextarea) {
-    this.descriptionTextarea = descriptionTextarea;
+  public void setDescriptionTextarea(String description) {
+    driver.findElement(descriptionTextarea).clear();
+    driver.findElement(descriptionTextarea).sendKeys(description);
   }
 
   public void clickSubmitButton() {
     driver.findElement(submitButton).click();
+  }
+
+  public boolean isCompleteBtnVisible() {
+    WebElement completeBtn = wait.until(driver -> driver.findElement(completeButton));
+    return completeBtn.isDisplayed();
   }
   
   public void clickCompleteButton() {
