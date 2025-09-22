@@ -8,22 +8,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GestorTareas {
-  private WebDriver driver; // instancia
-  private final WebDriverWait wait; // var
+  private WebDriver driver;
+  private final WebDriverWait wait;
 
-  // identificadores
+  // localizadores
   private By titleInput = By.cssSelector("input[placeholder='Título']");
   private By descriptionTextarea = By.cssSelector("textarea[placeholder='Descripción']");
 
   private By submitButton = By.cssSelector("button[type='submit']");
 
-  // button[text()='Completar']
   private By completeButton = By.xpath("//*[@id=\"root\"]/div/ul/li/div/button[1]");
 
   // construct solo driver y agregar wait explicito
   public GestorTareas(WebDriver driver) {
     this.driver = driver;
-    this.wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // wait explicito
+    this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
   }
 
   public String getTitleInput() {

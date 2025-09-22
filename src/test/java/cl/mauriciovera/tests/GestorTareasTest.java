@@ -1,6 +1,5 @@
 package cl.mauriciovera.tests;
 
-// import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
@@ -20,7 +19,7 @@ public class GestorTareasTest {
   private WebDriver driver;
   private String baseUrl = "https://gestasks.vercel.app/";
 
-  private GestorTareas gestorTareas; // pages
+  private GestorTareas gestorTareas;
 
   @BeforeAll
   public void setUp() {
@@ -36,12 +35,12 @@ public class GestorTareasTest {
     gestorTareas = new GestorTareas(driver);
   }
 
-  /* @AfterEach
+  @AfterEach
   void tearDown() {
     if (driver != null) {
       driver.quit();
     }
-  } */
+  }
 
   @Test
   public void testCrearTarea() {
@@ -53,7 +52,6 @@ public class GestorTareasTest {
     gestorTareas.setDescriptionTextarea(description);
     gestorTareas.clickSubmitButton();
 
-    //gestorTareas.clickCompleteButton();
     //Then
     assertTrue(gestorTareas.isCompleteBtnVisible());
 
