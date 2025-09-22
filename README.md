@@ -1,6 +1,6 @@
 # 🧪 Gestor de Tareas - Automatización con Selenium y POM
 
-Este proyecto implementa pruebas automatizadas para la aplicación [Gestasks](https://gestasks.vercel.app/) utilizando el patrón Page Object Model (POM), Selenium WebDriver y JUnit 5. El objetivo es validar el flujo de creación y visualización de tareas en la interfaz web.
+Este proyecto implementa pruebas automatizadas para una aplicación propia desarrollada con TypeScript en React [Gestasks](https://gestasks.vercel.app/) utilizando el patrón Page Object Model (POM), Selenium WebDriver y JUnit 5. El objetivo es validar el flujo de creación y visualización de tareas en la interfaz web.
 
 
 ## 📁 Estructura del Proyecto
